@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: eurekaapi
+
+#server
+server:
+  port: 1002
+
+#eureka:
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:1000/eureka
+
+
+#日志配置
+logging:
+  config: classpath:logback-spring.xml  #指定项目启动的时，读取logback-spring.xml日志配置文件,文件名最好不要使用logback.xml
+  level: #配置指定包的路径下应用程序的日志记录和日志级别。
+    root: info
+    springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator: error
+    org.springframework: warn
+  file:
+    path: D:\work\logs #设置日志输出路径
+    name: api.log #设置日志文件的名称
+
